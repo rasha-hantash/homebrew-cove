@@ -1,25 +1,25 @@
-class CcsCli < Formula
+class CoveCli < Formula
   desc "Claude Code session manager — tmux-based multi-session workflow"
-  homepage "https://github.com/rasha-hantash/ccs"
-  version "0.1.0"
+  homepage "https://github.com/rasha-hantash/cove"
+  version "0.3.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/rasha-hantash/ccs/releases/download/v0.1.0/ccs-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "e1f96ec72196486de72b2530fdbca3b850a94cfa84f1ba43d94ec8df5615e8ca"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "576cbca1f89648b058807af31b7bc33a7d379ee5c6c8d1d139c16c5052773b8f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rasha-hantash/ccs/releases/download/v0.1.0/ccs-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "3acc636ae474ce903d0c1e90cff1ba276654433b36d22f382728fc37cfef4e05"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "9f4c300675a89b5a1785f0c31281c4b17659694572b6459c0011e65777ad9e33"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/rasha-hantash/ccs/releases/download/v0.1.0/ccs-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "0cec0fd6b58a6fa77d3752cbafb03097e294767d1932c0eb3888e6682f3c8b1d"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d00e6cdd26d3a751b0830dccdf6904b6182a461276ee4096f33df4e13ddb39d3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rasha-hantash/ccs/releases/download/v0.1.0/ccs-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "06031e57a45d8fd6b63efa7d436f02a15e40433755f95f8ee303d042a4224a81"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7b42b6882c87c0dae943b0d59ab28b48a9a0fad28a1d456b54b9b28163d394b6"
     end
   end
   license "MIT"
@@ -48,16 +48,16 @@ class CcsCli < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
-      bin.install "ccs"
+      bin.install "cove"
     end
     if OS.mac? && Hardware::CPU.intel?
-      bin.install "ccs"
+      bin.install "cove"
     end
     if OS.linux? && Hardware::CPU.arm?
-      bin.install "ccs"
+      bin.install "cove"
     end
     if OS.linux? && Hardware::CPU.intel?
-      bin.install "ccs"
+      bin.install "cove"
     end
 
     install_binary_aliases!
