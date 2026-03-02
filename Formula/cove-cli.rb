@@ -1,35 +1,35 @@
 class CoveCli < Formula
   desc "Claude Code session manager — tmux-based multi-session workflow"
   homepage "https://github.com/rasha-hantash/cove"
-  version "0.3.3"
+  version "0.3.7"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "576cbca1f89648b058807af31b7bc33a7d379ee5c6c8d1d139c16c5052773b8f"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.7/cove-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "3f9f80bc3a63aaef3a06e30ab5507a7092f0271d5ef3db5599e5806f9d204c39"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "9f4c300675a89b5a1785f0c31281c4b17659694572b6459c0011e65777ad9e33"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.7/cove-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "70111e751e21ee3877881ac4474c9f5f1cacdd2acf9f050661a9675482e1e52f"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d00e6cdd26d3a751b0830dccdf6904b6182a461276ee4096f33df4e13ddb39d3"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.7/cove-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "cbac77867bcea4723c00f3fddb38601fc0e660093607a6cfc6ec8ac6258048b8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.3/cove-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7b42b6882c87c0dae943b0d59ab28b48a9a0fad28a1d456b54b9b28163d394b6"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.3.7/cove-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "76e87b8b2f0c0eb1748aeb5f70cc6a89c1ea7f66f87b7221ee46bd93e956d749"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,18 +47,10 @@ class CoveCli < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "cove"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "cove"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "cove"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "cove"
-    end
+    bin.install "cove" if OS.mac? && Hardware::CPU.arm?
+    bin.install "cove" if OS.mac? && Hardware::CPU.intel?
+    bin.install "cove" if OS.linux? && Hardware::CPU.arm?
+    bin.install "cove" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
