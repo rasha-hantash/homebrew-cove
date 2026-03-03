@@ -5,21 +5,21 @@ class CoveCli < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/rasha-hantash/cove/releases/download/v0.5.0/cove-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "9888c2b43cac9aa271b09cec897375dd660f49345f6306553d7a4c1e1a81f416"
+      sha256 "cc8b4bbcc9976f0a28925b7756af80c11a01465fcf11b6fb4bfc3aba5b5f3d9d"
     end
     if Hardware::CPU.intel?
       url "https://github.com/rasha-hantash/cove/releases/download/v0.5.0/cove-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "fec59168c5276433ddc600ab6e8181de2d84eb3cdf878196d59cd3e83a707d09"
+      sha256 "c3432e35766711d744a81783b69bd7155d0f60791647f7e1d74f9f3f7d786d1e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/rasha-hantash/cove/releases/download/v0.5.0/cove-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a3478cecc47793cd931fc2789309896939b918e9c870479cf3f59bfa5e2b470b"
+      sha256 "e98f71ae5616217b523ac0fd02bc7a1eeba78ad705db654b3fe9611615bb1302"
     end
     if Hardware::CPU.intel?
       url "https://github.com/rasha-hantash/cove/releases/download/v0.5.0/cove-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "dbe46a16bacea3e5d5a38a300de5236dcab70bc334a43833805c7956e8be262b"
+      sha256 "227e0dc2d2565f8ec0d713017efa895c86b40ccffc36b8fbbbfdaa71fe3470ba"
     end
   end
   license "MIT"
