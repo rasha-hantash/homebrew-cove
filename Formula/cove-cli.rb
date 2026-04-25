@@ -1,25 +1,25 @@
 class CoveCli < Formula
   desc "Claude Code session manager — tmux-based multi-session workflow"
   homepage "https://github.com/rasha-hantash/cove"
-  version "0.8.1"
+  version "0.8.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.1/cove-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "a9e528d7d59fec440e17464476ca09dff20cec335e984e93d89d3c8b1d1cb38a"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.2/cove-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "3259473f8f81145f08e2a043a0dffeebaa2db468a32aca050eb9e571acb414d0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.1/cove-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "200812ffa3245a5be54c8ba93136dc9ee11f10c0c1048cbcd11a95b62366922a"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.2/cove-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "a5e1d06575bb82cb4091a2fb6fe57e58ba3555b20cd758136d144920b994cbca"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.1/cove-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "947162599d7885ac47248502b9bea2b4527e93ae2b2ea19029a4ad623bf458cb"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.2/cove-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9f30a3374d4d8fcb60efd3332edd623e9673d92594ad562ff409d2e4ef67fbf8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.1/cove-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "5bea716a1f2801343ff3e17e204b12ebc05b17bfd60c9ea0227395e8ce2bc7ab"
+      url "https://github.com/rasha-hantash/cove/releases/download/v0.8.2/cove-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5820e0e5a20313dd2516f21e8f42d08103aa976969f9d350aaf1d85c98995944"
     end
   end
   license "MIT"
